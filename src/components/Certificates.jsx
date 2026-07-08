@@ -4,9 +4,9 @@ const CertificateCard = ({ cert, aosDelay }) => (
   <div 
     data-aos="zoom-in"
     data-aos-delay={aosDelay}
-    className="bg-black/20 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-white/25 hover:scale-105 hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] transition-all duration-500 cursor-default group"
+    className="bg-black/20 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-white/25 hover:scale-105 hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] transition-all duration-500 group flex flex-col h-full"
   >
-    <div className="flex items-start gap-4">
+    <div className="flex items-start gap-4 mb-4 flex-1">
       <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-300">{cert.icon}</span>
       <div>
         <h3 className="text-white font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-white transition-colors">
@@ -17,6 +17,22 @@ const CertificateCard = ({ cert, aosDelay }) => (
         </p>
       </div>
     </div>
+
+    {/* View Certificate button — only shown once a PDF file is provided */}
+    {cert.file && (
+      <a
+        href={cert.file}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-white hover:text-[#ff2a2a] text-white border border-white/20 px-4 py-2 rounded-full transition-all duration-300 mt-auto"
+      >
+        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+        View Certificate
+      </a>
+    )}
   </div>
 );
 

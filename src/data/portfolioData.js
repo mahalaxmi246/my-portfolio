@@ -275,12 +275,16 @@ export const certificates = {
       issuer: "Udemy (Krish Naik)",
       detail: "RAG pipelines, LLM integration, vector stores, deploying production Gen AI applications",
       icon: "🧠",
+      // Place the PDF at public/certificates/langchain-huggingface.pdf
+      file: "/certificates/langchain-huggingface.pdf",
     },
     {
       name: "FastAPI",
       issuer: "Udemy",
       detail: "Production-grade REST APIs, async programming, dependency injection, and database integration",
       icon: "⚡",
+      // Place the PDF at public/certificates/fastapi.pdf
+      file: "/certificates/fastapi.pdf",
     },
   ],
   // No "view all" link provided yet — leave empty to hide the CTA button, or add a Drive/Credly link later.
